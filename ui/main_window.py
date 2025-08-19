@@ -11,7 +11,7 @@ from ui.layout_picker import LayoutPicker
 from ui.canvas_dialog import CanvasDialog
 from ui.history_compare import HistoryCompareWindow
 
-APP_TITLE = "Board Tester — Pluggable Canvas + Validation"
+APP_TITLE = "Board Tester"
 
 MODE_ENTRY = "entry"
 MODE_LAYOUT = "layout"
