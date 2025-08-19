@@ -1,4 +1,9 @@
 pdf2image==1.17.0
 Pillow==10.4.0
-pandas==2.2.3
 openpyxl==3.1.5
+PyQt5>=5.15.0
+matplotlib>=3.3.0
+scikit-rf>=0.18.0
+numpy>=1.18.0
+pandas>=1.0.0
+
