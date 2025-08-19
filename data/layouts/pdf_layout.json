@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.1",
+  "board_name": "PDFBoard",
+  "canvas": {
+    "type": "pdf",
+    "path": "sample.pdf",
+    "page": 0,
+    "dpi": 144
+  },
+  "fields": [
+    {
+      "id": "L1",
+      "label": "L1",
+      "component_type": "inductor",
+      "position": {
+        "x": 120,
+        "y": 340,
+        "w": 160,
+        "h": 26
+      },
+      "input": {
+        "type": "number",
+        "units": [
+          "\u00b5H",
+          "mH"
+        ],
+        "default_unit": "\u00b5H",
+        "validation": {
+          "target": 100,
+          "lower_abs": -10,
+          "upper_abs": 10
+        }
+      }
+    }
+  ]
+}

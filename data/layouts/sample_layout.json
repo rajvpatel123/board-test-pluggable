@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.1",
+  "board_name": "SampleBlank",
+  "canvas": {
+    "type": "blank",
+    "size": [
+      1000,
+      800
+    ],
+    "grid": {
+      "enabled": true,
+      "size": 20
+    }
+  },
+  "fields": [
+    {
+      "id": "R1",
+      "label": "R1",
+      "component_type": "resistor",
+      "position": {
+        "x": 120,
+        "y": 140,
+        "w": 160,
+        "h": 26
+      },
+      "input": {
+        "type": "number",
+        "units": [
+          "\u03a9",
+          "k\u03a9"
+        ],
+        "default_unit": "\u03a9",
+        "validation": {
+          "target": 1000,
+          "lower_pct": -5,
+          "upper_pct": 5
+        }
+      }
+    },
+    {
+      "id": "Mode",
+      "label": "Test Mode",
+      "position": {
+        "x": 120,
+        "y": 200,
+        "w": 160,
+        "h": 26
+      },
+      "input": {
+        "type": "enum",
+        "options": [
+          "Cold",
+          "Room",
+          "Hot"
+        ],
+        "default": "Room"
+      }
+    },
+    {
+      "id": "J1_Fitted",
+      "label": "J1 Fitted",
+      "position": {
+        "x": 120,
+        "y": 260,
+        "w": 120,
+        "h": 24
+      },
+      "input": {
+        "type": "toggle",
+        "labels": {
+          "true": "Fitted",
+          "false": "Open"
+        }
+      }
+    },
+    {
+      "id": "Notes",
+      "label": "Notes",
+      "position": {
+        "x": 120,
+        "y": 320,
+        "w": 260,
+        "h": 26
+      },
+      "input": {
+        "type": "text"
+      }
+    }
+  ]
+}

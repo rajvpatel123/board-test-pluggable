@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.1",
+  "board_name": "ImageBoard",
+  "canvas": {
+    "type": "image",
+    "path": "sample_board.png",
+    "dpi": 144
+  },
+  "fields": [
+    {
+      "id": "C3",
+      "label": "C3",
+      "position": {
+        "x": 137.0,
+        "y": 175.0,
+        "w": 75.0,
+        "h": 60.0
+      },
+      "input": {
+        "type": "number",
+        "units": [],
+        "default_unit": "",
+        "validation": {}
+      },
+      "component_type": ""
+    },
+    {
+      "id": "C1",
+      "label": "C1",
+      "position": {
+        "x": 144.0,
+        "y": 263.0,
+        "w": 27.0,
+        "h": 72.0
+      },
+      "input": {
+        "type": "number",
+        "units": [
+          ""
+        ],
+        "default_unit": ""
+      }
+    }
+  ]
+}
