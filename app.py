@@ -2,7 +2,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTabWidget, QVBoxLayout, QWidget
-from ui.main_window import BoardTesterApp as MainWindow
+from ui.main_window import BoardTesterApp
 from ui.s2p_viewer import S2PViewer
 from ui.im_viewer import IMViewer
 
@@ -21,7 +21,7 @@ class App(QMainWindow):
         self.layout.addWidget(self.tabs)
 
         # Tab 1: Layout Editor
-        self.main_window = MainWindow()
+        self.main_window = BoardTesterApp()
         self.tabs.addTab(self.main_window, "Layout Editor")
 
         # Tab 2: S2P Viewer
