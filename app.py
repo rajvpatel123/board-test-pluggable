@@ -2,7 +2,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTabWidget, QVBoxLayout, QWidget
-from ui.main_window import BoardTesterApp
+from ui.main_window import BoardTesterApp as MainWindow
 from ui.s2p_viewer import S2PViewer
 from ui.im_viewer import IMViewer
 
