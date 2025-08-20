@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from PIL import ImageTk
 import pandas as pd
+import fitz  # PyMuPDF
 
 from core.pdf_renderer import render_background
 from core import db
@@ -16,7 +17,58 @@ APP_TITLE = "Board Tester"
 MODE_ENTRY = "entry"
 MODE_LAYOUT = "layout"
 
-class MainWindow(tk.Tk):
+
+
+from PyQt5.QtWidgets import (
+    QWidget, QVBoxLayout, QPushButton, QFileDialog,
+    QLabel, QScrollArea, QMessageBox
+)
+from PyQt5.QtGui import QPixmap, QImage
+from PyQt5.QtCore import Qt
+
+
+class MainWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Layout Viewer")
+        self.layout = QVBoxLayout(self)
+
+        # Load button
+        self.load_button = QPushButton("Load PDF Layout")
+        self.load_button.clicked.connect(self.load_pdf)
+        self.layout.addWidget(self.load_button)
+
+        # Scroll area and image label
+        self.scroll_area = QScrollArea()
+        self.image_label = QLabel("No PDF loaded.")
+        self.image_label.setAlignment(Qt.AlignCenter)
+        self.scroll_area.setWidget(self.image_label)
+        self.scroll_area.setWidgetResizable(True)
+        self.layout.addWidget(self.scroll_area)
+
+    def load_pdf(self):
+        file_path, _ = QFileDialog.getOpenFileName(self, "Open PDF", "", "PDF Files (*.pdf)")
+        if not file_path:
+            return
+
+        try:
+            doc = fitz.open(file_path)
+            page = doc.load_page(0)
+            pix = page.get_pixmap(dpi=150)
+
+            # Convert to QImage
+            image = QImage(pix.samples, pix.width, pix.height, pix.stride, QImage.Format_RGB888)
+            pixmap = QPixmap.fromImage(image)
+
+            # Set image
+            self.image_label.setPixmap(pixmap)
+            self.image_label.adjustSize()
+
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to load PDF:\n{e}")
+
+
+class BoardTesterApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title(APP_TITLE)
