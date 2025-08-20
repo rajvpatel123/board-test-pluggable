@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from PIL import ImageTk
 import pandas as pd
-import fitz  # PyMuPDF
+#Simport fitz  # PyMuPDF
 
 from core.pdf_renderer import render_background
 from core import db
