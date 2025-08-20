@@ -16,7 +16,7 @@ APP_TITLE = "Board Tester"
 MODE_ENTRY = "entry"
 MODE_LAYOUT = "layout"
 
-class BoardTesterApp(tk.Tk):
+class MainWindow(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title(APP_TITLE)
